@@ -9,8 +9,8 @@ ecc=0;
 width=1;
 
 %ROIs = {'V1','V2v','V2d','V3v','V3d','V3A','V3B','LO1','LO2','V4','MT','IPS0','IPS1','IPS2','IPS3','IPS4','IPS5'};
-roiList = {'V1','V2v','V2d','V3v','V3d','V3A','V3B','LO1','LO2','V4','IPS0','IPS1','IPS2','IPS3','IPS4','IPS5'};
-load('bothhemi_IPS5.mat')
+roiList = {'V1','V2v','V2d','V3v','V3d','V3A','V3B','LO1','LO2','V4','IPS0','IPS1','IPS2','IPS3','IPS4'};%,'IPS5'};
+load('bothhemi_re.mat')
 r2cutoff = .2;
 
 if ~(strcmp(roi,'V2') || strcmp(roi,'V3'))
@@ -85,8 +85,8 @@ if r2 ==1;
     xaxis(r2cutoff, round(maxr2*10)/10);
     yaxis(r2cutoff, round(maxr2*10)/10);
     axis square;
-    xlabel('Stimulus');
-    ylabel('Task');
+    xlabel('r^2: Vision Only');
+    ylabel('r^2: Vision+Attention');
     box off;
     %set(gca,'YTick',0.2:.2:.8); set(gca,'XTick',0.2:.2:.8);    
     ylim = get(gca,'YLim'); xlim = get(gca,'XLim');
@@ -207,8 +207,8 @@ figure('Position', figuresize)
 %      xaxis(0,20)
 %      yaxis(0,20)
     axis square;
-    xlabel('Stimulus');
-    ylabel('Task');
+    xlabel('Size: Vision Only');
+    ylabel('Size: Vision+Attention');
     box off;
 end
    

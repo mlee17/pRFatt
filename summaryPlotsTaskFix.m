@@ -5,6 +5,10 @@
 %     date:
 %  purpose:
 
+
+% [ROIStruct, bothHemi] = summaryPlotsTaskFix([],0.2, 25,'C','collapse')
+
+
 function [ROIStruct, bothHemi]= summaryPlotsTaskFix(v, r2cutoff,eccCutoff, ROItype, plottype, varargin)
 
 if ~exist('mrParamsDialog')
@@ -40,7 +44,7 @@ v = loadAnalysis(v, ['pRFAnal/' analysisFile.name]);
 
 hemi = {'l','r'};
 %ROIs = {'V1','V2v','V2d','V3v','V3d','V3A','V3B','LO1','LO2','V4','MT','IPS0','IPS1','IPS2','IPS3','IPS4','IPS5'};
-ROIs = {'V1','V2v','V2d','V3v','V3d','V3A','V3B','LO1','LO2','V4','IPS0','IPS1','IPS2','IPS3','IPS4','IPS5'};
+ROIs = {'V1','V2v','V2d','V3v','V3d','V3A','V3B','LO1','LO2','V4','IPS0','IPS1','IPS2','IPS3','IPS4'};%,'IPS5'};
 
 
 % roiDir = viewGet(v,'roidir')
@@ -182,6 +186,9 @@ ROIStruct{3}.meanEccCutoff = eccCutoff;
 
         for hemi = 1:2
             for roi = 1:length(ROIs)
+                if roi == length(ROIs) && length(ROIStruct{hemi}) < roi
+                    continue
+                end
             if isempty(ROIStruct{hemi}{roi})
             for type = 1:2
                 ROIStruct{hemi}{roi}(type).roiName = [];

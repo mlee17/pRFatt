@@ -1,8 +1,8 @@
 function [r2, x, y, Eccentricity, Size] = createMat
-load('bothhemi_IPS5.mat')
+load('bothhemi_re.mat')
 
 roiList = {'V1','V2v','V2d','V3v','V3d','V4','V3A','V3B','LO1','LO2','IPS0','IPS1','IPS2','IPS3','IPS4','IPS5'};
-roiName = {'V1','V2','V3','V4','V3A','V3B','LO1','IPS0','IPS1','IPS2','IPS3','IPS4','IPS5'};
+roiName = {'V1','V2','V3','V4','V3A','V3B','LO1','IPS0','IPS1','IPS2','IPS3','IPS4'};%'IPS5'};
 
 for roi = 1:length(roiName)
 
