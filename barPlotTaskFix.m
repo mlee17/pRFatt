@@ -38,8 +38,8 @@ mybar2(Size(1:4,2:3), Size(1:4,4:5), 'pRF size (deg)', condColors, early, 0.65)
 % mybar2(r2(1:4,2:3), r2(1:4,4:5), 'r^2', condColors, early)
 % mybar2(Size(1:4,2:3), Size(1:4,4:5), 'pRF size', condColors, early)
 
-mybar2(r2(8:12,2:3), r2(8:12,4:5), 'r^2', condColors, IPS, 0.65)
-mybar2(Size(8:12,2:3), Size(8:12,4:5), 'pRF size (deg)', condColors, IPS,0.65)
+mybar2(r2(7:11,2:3), r2(7:11,4:5), 'r^2', condColors, IPS, 0.65)
+mybar2(Size(7:11,2:3), Size(7:11,4:5), 'pRF size (deg)', condColors, IPS,0.65)
 
 % mybar2(r2(8:12,2:3), r2(8:12,4:5), 'r^2', condColors, early)
 % mybar2(Size(8:12,2:3), Size(8:12,4:5), 'pRF size', condColors, early)
