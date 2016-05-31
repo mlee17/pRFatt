@@ -32,8 +32,9 @@ r2data = r2(1:4,2:3);
 %     set(retval.barHandles(i),'EdgeColor',[0.7,0.7,0.7]); %[0 0 0]'None'
 %   end
 %   
-mybar2(r2(1:4,2:3), r2(1:4,4:5), 'r^2', condColors, early, 0.65)
-mybar2(Size(1:4,2:3), Size(1:4,4:5), 'pRF size (deg)', condColors, early, 0.65)
+earlyLabel = {'V1';'V2';'V3';'hV4'};
+mybar2(r2(1:4,2:3), r2(1:4,4:5), 'r^2', condColors, earlyLabel, 0.65)
+mybar2(Size(1:4,2:3), Size(1:4,4:5), 'pRF size (deg)', condColors, earlyLabel, 0.65)
 
 % mybar2(r2(1:4,2:3), r2(1:4,4:5), 'r^2', condColors, early)
 % mybar2(Size(1:4,2:3), Size(1:4,4:5), 'pRF size', condColors, early)
@@ -88,7 +89,9 @@ end
              thisYerror = -err(iGroup,iWithinGroup);
         end
 	% plot the line
-	retval.yErrorHandle(iGroup,iWithinGroup) = line([barXpos(iWithinGroup,iGroup) barXpos(iWithinGroup,iGroup)],[vars(iGroup,iWithinGroup) vars(iGroup,iWithinGroup)+thisYerror],'Color',[0 0 0]);
+	retval.yErrorHandle(iGroup,iWithinGroup) = line([barXpos(iWithinGroup,iGroup) barXpos(iWithinGroup,iGroup)],[vars(iGroup,iWithinGroup)-thisYerror vars(iGroup,iWithinGroup)+thisYerror],'Color',[0 0 0]);
+%     	retval.yErrorHandle(iGroup,iWithinGroup) = line([barXpos(iWithinGroup,iGroup) barXpos(iWithinGroup,iGroup)],[vars(iGroup,iWithinGroup) vars(iGroup,iWithinGroup)-thisYerror],'Color',[0 0 0]);
+
       end
     end
   end
@@ -105,7 +108,7 @@ box off
 set(gca,'fontsize',15)
 ylabel(yLab, 'fontsize', 18)
 %drawPublishAxis('labelFontSize=18')
-
+%drawPublishAxis('labelFontSize=20')
 
 %drawPublishAxis
 
